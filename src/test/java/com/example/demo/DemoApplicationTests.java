@@ -9,7 +9,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class DemoApplicationTests {
-
 	@Autowired
 	private UserController userController;
 
@@ -17,8 +16,4 @@ class DemoApplicationTests {
 	public void contextLoad() throws Exception {
 		assertThat(userController).isNotNull();
 	}
-
-
-
-
 }

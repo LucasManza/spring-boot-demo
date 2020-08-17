@@ -33,7 +33,7 @@ public class UserController {
         return ResponseEntity.ok(this.userService.updateUser(userModel));
     }
 
-    @DeleteMapping(("/{id}"))
+    @DeleteMapping("/{id}")
     public ResponseEntity deleteUser(@PathVariable Integer id) {
         return ResponseEntity.ok(this.userService.deleteUser(id));
     }
