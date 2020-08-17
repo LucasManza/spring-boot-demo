@@ -8,9 +8,12 @@ public class UserModel implements Identifiable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private final int id;
+    private int id;
     private String name;
     private String lastName;
+
+    public UserModel() {
+    }
 
     public UserModel(int id, String name, String lastName) {
         this.id = id;
