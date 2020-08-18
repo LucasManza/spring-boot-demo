@@ -1,6 +1,5 @@
 package com.example.demo;
 
-
 import com.example.demo.models.UserModel;
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +20,12 @@ public class OnStart {
 
     @EventListener
     public void appReady(ApplicationReadyEvent event) {
-        Boolean init = event.getApplicationContext().getEnvironment().getProperty("initdb", boolean.class);
-        if (init == null || init) {
-            try {
-                // users
-                UserModel user1 = userRepository.save(new UserModel("Lucas", "Manzanelli"));
+        try {
+            // users
+            UserModel user1 = userRepository.save(new UserModel("Lucas", "Manzanelli"));
 
-            } catch (Exception ignored) {
-            }
+        } catch (Exception ignored) {
         }
-
     }
+
 }
