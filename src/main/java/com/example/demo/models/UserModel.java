@@ -9,14 +9,15 @@ public class UserModel implements Identifiable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private int id;
+    @Column
     private String name;
+    @Column
     private String lastName;
 
     public UserModel() {
     }
 
-    public UserModel(int id, String name, String lastName) {
-        this.id = id;
+    public UserModel(String name, String lastName) {
         this.name = name;
         this.lastName = lastName;
     }
@@ -24,5 +25,13 @@ public class UserModel implements Identifiable {
     @Override
     public int getId() {
         return this.id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 }
